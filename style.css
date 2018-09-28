@@ -1,11 +1,25 @@
+/* 
+  ------------------
+  | resume project |
+  ------------------
+*/
 
 * {margin: 0; padding: 0; text-decoration: none;}
 body {
-  background: #000;
-  color: #fff;
+  background: #EFEFEF;
+  color: #000;
 }
 a {
   color: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #DEDEDE;
 }
 .clearfix::after {
   content: '';
@@ -13,9 +27,16 @@ a {
   clear: both;
 }
 .topNavBar {
-  padding: 20px 16px 12px 16px;
+  padding: 20px 0 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-.topNavBar > a {
+.topNavBar > .topNavBar-inner {
+  padding: 0 16px;
+}
+.topNavBar  a {
   float: left;
 }
 .topNavBar .logo {
@@ -31,21 +52,21 @@ a {
 .topNavBar .logo .card {
   color: #9a9da2;
 }
-.topNavBar > a > span {
+.topNavBar  a > span {
   color: red;
   font-weight: bold;
 }
-.topNavBar > nav > ul {
+.topNavBar  nav > ul {
   float: right;
 }
-.topNavBar > nav > ul > li {
+.topNavBar  nav > ul > li {
   float: left;
   list-style: none;
   margin-left: 17px;
   margin-right: 17px;
 }
-.topNavBar > nav > ul > li > a {
-  display: block;
+.topNavBar  nav > ul > li > a {
+  display: inline-block;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgba(255, 255, 255, .7);
@@ -55,6 +76,115 @@ a {
   padding-bottom: 7px;
   padding-top: 7px;
 }
-.topNavBar > nav > ul > li > a:hover {
+.topNavBar  nav > ul > li > a:hover {
   border-bottom: 3px solid #e06567;
+}
+.banner {
+  background-image: url(./img/cute_cover.jpg);
+  height: 750px;
+  background-position: center center;
+  background-size: cover;
+}
+/* 遮罩层 */
+/* .banner::after {
+  content: '';
+  height: 750px;
+  width: 100%;
+  background: rgba(0,0,0,.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */
+.banner .mask {
+  height: 750px;
+  background-color: rgba(0,0,0,.6);
+}
+.userCard {
+  max-width: 940px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.userCard .picture img {
+  display: block;
+}
+.userCard .welcome {
+  display: inline-block;
+  background-color: #e8676b;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+}
+.userCard .welcome::before {
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 100%;
+  left: 4px;
+  border: 10px solid transparent;
+  border-left-color: #e8676b;
+  border-top: 0px;
+}
+.userCard .pictureAndText {
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.userCard .picture,
+.userCard .text {
+  float: left;
+}
+.userCard .text {
+  margin-left: 60px;
+}
+.userCard .text h1 {
+  margin-top: 12px;
+}
+.userCard .text p {
+  margin-top: 3px;
+}
+.userCard .text hr {
+  margin: 25px auto;
+  
+}
+.userCard dl dt,
+.userCard dl dd {
+  line-height: 1;
+  float: left;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.userCard dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd {
+  width: 70%;
+  color: #9da0a7;
+}
+.userCard > footer.media {
+  background: #e8676a;
+  text-align: center;
+}
+.userCard > footer.media > a {
+  width: 44px;
+  padding: 10px 0;
+  line-height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 16px;
+}
+.userCard > footer.media > a:hover {
+  background-color: #D15C61;
+}
+.userCard svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  vertical-align: top;
 }

@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>高航的个人简历</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <style type="text/css">
+      .icon {
+         width: 1em; height: 1em;
+         vertical-align: -0.15em;
+         fill: currentColor;
+         overflow: hidden;
+      }
+  </style>
   </head>
   <body>
-
-    <div class="topNavBar clearfix">
-
-      <a class="logo" href="#" alt="logo">
-        <span class="rs">RS</span><span class="card">card</span>
-      </a>
-
-      <nav class="clearfix">
-        <ul>
-          <li><a href="#">关于</a></li>
-          <li><a href="#">技能</a></li>
-          <li><a href="#">作品</a></li>
-          <li><a href="#">博客</a></li>
-          <li><a href="#">日历</a></li>
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">其他</a></li>
-        </ul>
-      </nav>
-
+    <div class="topNavBar">
+      <div class="topNavBar-inner clearfix">
+          <a class="logo" href="#" alt="logo">
+              <span class="rs">RS</span><span class="card">card</span>
+            </a>
+            <nav class="clearfix">
+              <ul>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">技能</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">日历</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">其他</a></li>
+              </ul>
+            </nav>
+      </div>
     </div>
-
-    <div class="banner"></div>
+    <div class="banner">
+      <div class="mask"></div>
+    </div>
     <main>
-      <div class="card">
-        <div class="pictureAndText">
+      <div class="userCard">
+        <div class="pictureAndText clearfix">
           <div class="picture">
-            <img src="" alt="头像">
+            <img src="./img/avatar.jpg" alt="头像">
           </div>
           <div class="text">
-            <div class="profile">
               <span class="welcome">Hello</span>
-              <h1>李高航</h1>
+              <h1>高航</h1>
               <p>前端开发工程师</p>
               <hr>
-              <dl>
+              <dl class="clearfix">
                 <dt>年龄</dt>
                 <dd>24</dd>
                 <dt>所在城市</dt>
@@ -50,17 +59,33 @@
                 <dt>手机</dt>
                 <dd>13063080002</dd>
               </dl>
-            </div>
           </div>
         </div>
         <footer class="media">
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo"></use>
+          </svg></a>
+          <a href="#">
+              <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-github"></use>
+              </svg>
+          </a>
+          <a href="#">
+              <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-xiezi"></use>
+              </svg>
+          </a>
+          <a href="#">
+              <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-weixin"></use>
+              </svg>
+          </a>
+          <a href="#">
+              <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-zhihu"></use>
+              </svg>
+          </a>
         </footer>
       </div>
       <a class="button" href="#">下载 PDF 简历</a>
@@ -97,5 +122,6 @@
       </div>
 
     </section>
+    <script src="http://at.alicdn.com/t/font_856732_koe207qj6dm.js"></script>
   </body>
 </html>
