@@ -8,6 +8,20 @@
 body {
   background: #EFEFEF;
   color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+h2 {
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+ul, ol {
+  list-style-type: none;
 }
 a {
   color: inherit;
@@ -103,11 +117,16 @@ hr {
   height: 750px;
   background-color: rgba(0,0,0,.6);
 } */
-
+body > main {
+  margin-top: -20%;
+  position: relative;
+  z-index: 2;
+}
 .userCard {
   max-width: 940px;
   margin: 0 auto;
   background-color: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
 }
 .userCard .picture img {
   display: block;
@@ -190,4 +209,144 @@ hr {
   height: 24px;
   fill: #fff;
   vertical-align: top;
+}
+body > main > div.download {
+  text-align: center;
+}
+body > main > div.download > .download-button {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+  border: 1px solid #CDCFD1;
+  background: #EFEFEF;
+  border-radius: 3px;
+  color: #3d4451;
+  font-weight: bold;
+  margin-top: 32px;
+}
+body > main > div.download > .download-button:hover {
+  transition: box-shadow .3s;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.self-intro {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 940px;
+  margin: 45px auto 0px auto;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 18px;
+  position: relative;
+}
+.self-intro::before {
+  content: '';
+  display: block;
+  background: #e8676a;
+  height: 54px;
+  width: 5px;
+  position: absolute;
+  left: 150px;
+  top: 4px;
+  border-radius: 2px;
+}
+section.skills {
+  max-width: 940px;
+  margin: 65px auto 0px auto;
+}
+section.skills > ol {
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
+  padding: 42px 50px;
+  margin-top: 30px;
+}
+section.skills > ol > li {
+  float: left;
+  width: 48%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+section.skills > ol > li:nth-child(even) {
+  float: right;
+}
+section.skills .progress-bar {
+  height: 5px;
+  background: #cd676b;
+  border-radius: 2px;
+  margin: 5px 0;
+}
+section.skills .progress-bar .progress {
+  height: 100%;
+  width: 75%;
+  background: #f5e1e1;
+  border-radius: 2px;
+}
+section.portfolio {
+  max-width: 940px;
+  margin: 65px auto 100px auto;
+  text-align: center;
+}
+section.portfolio > nav {
+  display: inline-block;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+section.portfolio > nav > ol {
+  display: inline-block;
+  vertical-align: top;
+}
+section.portfolio > nav > ol > li {
+  float: left;
+  margin-left: 20px;·
+  cursor: pointer;
+}
+/* 去除左边margin，使其居中 */
+section.portfolio > nav > ol > li:first-child {
+  margin-left: 0;
+}
+section.portfolio > nav > .bar {
+  height: 5px;
+  background: #fff;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+section.portfolio > nav > .bar > .bar-inner {
+  height: 100%;
+  background: #cd676b;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .3s;
+}
+section.portfolio > nav > .bar.state-1 > .bar-inner {
+  margin-left: 0;
+  width: 15%;
+}
+section.portfolio > nav > .bar.state-2 > .bar-inner {
+  margin-left: 50px;
+  width: 18%;
+}
+section.portfolio > nav > .bar.state-3 > .bar-inner {
+  margin-left: 100px;
+  width: 51%;
+}
+section.portfolio > .works {
+  height: 576px;
+  position: relative;
+}
+section.portfolio > .works > .big {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+section.portfolio > .works > .small:nth-of-type(2) {
+  position: absolute;
+  top: 298px;
+  left: 645px;
+}
+section.portfolio > .works > .small:nth-of-type(3) {
+  position: absolute;
+  top: 0;
+  left: 645px;
 }
