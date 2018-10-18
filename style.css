@@ -35,6 +35,12 @@ hr {
   border: none;
   border-top: 1px solid #DEDEDE;
 }
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 .clearfix::after {
   content: '';
   display: block;
@@ -94,14 +100,25 @@ hr {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  margin-right: 100%;
+  right: 0;
+  margin-left: 100%;
   padding: 5px 0;
+}
+/*下拉菜单动画*/
+@keyframes submenuSlide {
+  from {
+    margin-right: 100%;
+  }
+
+  to {
+    margin-right: 0;
+  }
 }
 .topNavBar  nav > ul > li.submenu > ul.active {
   display: block;
   white-space: nowrap;
   cursor: pointer;
+  animation: submenuSlide .5s;
 }
 .topNavBar  nav > ul > li.submenu > ul.active > li {
   padding: 10px 15px 10px 10px;
@@ -119,6 +136,7 @@ hr {
   padding-bottom: 7px;
   padding-top: 7px;
 }
+/*topNavBar动画*/
 @keyframes slideBar {
   0% {
     width: 0;
