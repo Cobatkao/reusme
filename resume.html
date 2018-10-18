@@ -9,14 +9,6 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <style type="text/css">
-      .icon {
-         width: 1em; height: 1em;
-         vertical-align: -0.15em;
-         fill: currentColor;
-         overflow: hidden;
-      }
-  </style>
   </head>
   <body>
     <div id="siteWelcome" class="site-welcome show">
@@ -29,10 +21,10 @@
             </a>
             <nav class="clearfix">
               <ul>
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#skill">技能</a></li>
                 <li class="submenu">
-                  <a href="#">作品</a>
+                  <a href="#work">作品</a>
                   <ul>
                     <li>作品1</li>
                     <li>作品2</li>
@@ -40,24 +32,22 @@
                   </ul>
                 </li>
                 <li class="submenu">
-                  <a href="#">博客</a>
+                  <a href="#blog">博客</a>
                   <ul>
                     <li>博客1</li>
                     <li>博客2</li>
                     <li>博客3</li>
                   </ul>
                 </li>
-                <li><a href="#">日历</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+                <li><a href="#calendar">日历</a></li>
+                <li><a href="#contact">联系方式</a></li>
+                <li><a href="#others">其他</a></li>
               </ul>
             </nav>
       </div>
     </div>
-    <div class="banner">
-      <!-- <div class="mask"></div> -->
-    </div>
-    <main>
+    <div class="banner"></div>
+    <main id="about">
       <div class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
@@ -114,8 +104,9 @@
         方应杭，资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
         技能：前端开发，Rails 开发，Node.js 开发
       </div>
+    </div>
     </main>
-    <section class="skills">
+    <section id="skill" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -168,7 +159,7 @@
             </li>
       </ol>
     </section>
-    <section class="portfolio">
+    <section id="work" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
