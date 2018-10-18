@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>高航的个人简历</title>
+    <link rel="stylesheet" href="./loading.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <style type="text/css">
@@ -17,6 +19,9 @@
   </style>
   </head>
   <body>
+    <div id="siteWelcome" class="site-welcome Show">
+      <div class="loading"></div>
+    </div>
     <div class="topNavBar">
       <div class="topNavBar-inner clearfix">
           <a class="logo" href="#" alt="logo">
@@ -173,6 +178,8 @@
       portfolioAll.onclick = ()=>{portfolioBar.className = 'bar state-1'}
       portfolioFramework.onclick = ()=>{portfolioBar.className = 'bar state-2'}
       portfolioVallina.onclick = ()=>{portfolioBar.className = 'bar state-3'}
+      
+      siteWelcome.classList.remove('active')
     </script>
   </body>
 </html>
