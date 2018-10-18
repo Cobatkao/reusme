@@ -1,0 +1,51 @@
+.site-welcome {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #888;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+.site-welcome.show {
+  display: flex;
+}
+.loading {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+@keyframes shrinkCircle {
+  from {
+    width: 0px;
+    height: 0px;
+    background: #000;
+    opacity: 1;
+  }
+  
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+  }
+}
+.loading::before, .loading::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation: shrinkCircle 1.5s linear infinite;
+}
+.loading::after {
+  animation-delay: .75s;
+}
