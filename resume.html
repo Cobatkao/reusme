@@ -19,7 +19,7 @@
   </style>
   </head>
   <body>
-    <div id="siteWelcome" class="site-welcome Show">
+    <div id="siteWelcome" class="site-welcome show">
       <div class="loading"></div>
     </div>
     <div class="topNavBar">
@@ -179,7 +179,9 @@
       portfolioFramework.onclick = ()=>{portfolioBar.className = 'bar state-2'}
       portfolioVallina.onclick = ()=>{portfolioBar.className = 'bar state-3'}
       
-      siteWelcome.classList.remove('active')
+      setTimeout(() => {
+        siteWelcome.classList.remove('show')
+      }, 3000)
     </script>
   </body>
 </html>
