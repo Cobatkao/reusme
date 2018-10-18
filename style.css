@@ -47,6 +47,15 @@ hr {
   left: 0;
   width: 100%;
   z-index: 1; /* 解决伪类遮罩层层叠顺序问题 */
+  transition: all .8s;
+  color: rgba(255, 255, 255, .6);
+}
+.topNavBar.sticky {
+  background: #fff;
+  padding: 10px 0 12px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+  z-index: 3;
+  color: #53555c;
 }
 .topNavBar > .topNavBar-inner {
   padding: 0 16px;
@@ -79,20 +88,56 @@ hr {
   list-style: none;
   margin-left: 17px;
   margin-right: 17px;
+  position: relative;
+}
+.topNavBar  nav > ul > li.submenu > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-right: 100%;
+  padding: 5px 0;
+}
+.topNavBar  nav > ul > li.submenu > ul.active {
+  display: block;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.topNavBar  nav > ul > li.submenu > ul.active > li {
+  padding: 10px 15px 10px 10px;
+  color: #3d4451;
+  background: #fff;
 }
 .topNavBar  nav > ul > li > a {
   display: inline-block;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgba(255, 255, 255, .7);
+  color: inherit;
   font-weight: bold;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   padding-bottom: 7px;
   padding-top: 7px;
 }
-.topNavBar  nav > ul > li > a:hover {
-  border-bottom: 3px solid #e06567;
+@keyframes slideBar {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+.topNavBar  nav > ul > li > a:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #e06567;
+  height: 3px;
+  animation: slideBar .5s;
 }
 .banner {
   background-image: url(./img/cute_cover.jpg);
@@ -299,7 +344,7 @@ section.portfolio > nav > ol {
 }
 section.portfolio > nav > ol > li {
   float: left;
-  margin-left: 20px;·
+  margin-left: 20px;
   cursor: pointer;
 }
 /* 去除左边margin，使其居中 */
