@@ -22,12 +22,26 @@ let aTages = document.querySelectorAll('.topNavBar  nav > ul > li > a')
 for(let i = 0; i < aTages.length; i++) {
   aTages[i].addEventListener('click', (e) => {
     e.preventDefault()
-    let clickA = e.currentTarget    
-    let hrefA = clickA.getAttribute('href')
-    //获取点击的元素
-    let element = document.querySelector(hrefA)
-    let top = element.offsetTop
-    console.log(top);
+    let top = document.querySelector(e.currentTarget.getAttribute('href')).offsetTop
+    //总移动次数
+    let n = 25
+    //多少时间动一次
+    let duration = 500 / n
+    //获取用户点击navbar时距离
+    let currentDistance = window.scrollY
+    //滚动目标距离
+    let targetDisctance = top - 80
+    //delay时间内每次移动的距离
+    let finalScrollDsitance = (targetDisctance - currentDistance) / n
+    let i = 0
+    let scrollId = setInterval(() => {
+      if(i === n) {
+        window.clearInterval(scrollId)
+        return
+      }
+      i += 1
+      window.scrollTo(0, currentDistance + finalScrollDsitance * i)
+    }, duration)
     window.scrollTo(0, top - 80)
   })
 }
