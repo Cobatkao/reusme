@@ -53,11 +53,11 @@ for(let i = 0; i < aTages.length; i++) {
     //   i += 1
     //   window.scrollTo(0, currentDistance + s * i)
     // }, duration)
-    // var t = (s / 100) * 300
-    // if(t>500) {t = 500}
+    var t = Math.abs((s / 100) * 200)
+    t > 500 ? 500 : t
     var coords = {y: currentDistance}
     var tween = new TWEEN.Tween(coords)
-    .to({y: targetDisctance}, 1000)
+    .to({y: targetDisctance}, t)
     .easing(TWEEN.Easing.Quadratic.InOut)
     .onUpdate(function() {
       window.scrollTo(0, coords.y)
