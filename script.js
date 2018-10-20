@@ -17,33 +17,52 @@ for(let i = 0; i < liTages.length; i++) {
   })
 }
 
+//tweenjs
+function animate(time) {
+  requestAnimationFrame(animate)
+  TWEEN.update(time)
+}
+requestAnimationFrame(animate)
+
 //点击后滚动
 let aTages = document.querySelectorAll('.topNavBar  nav > ul > li > a')
 for(let i = 0; i < aTages.length; i++) {
   aTages[i].addEventListener('click', (e) => {
     e.preventDefault()
     let top = document.querySelector(e.currentTarget.getAttribute('href')).offsetTop
-    //总移动次数
-    let n = 25
-    //多少时间动一次
-    let duration = 500 / n
-    //获取用户点击navbar时距离
+
+    // //总移动次数
+    // let n = 25
+    // //多少时间动一次
+    // let duration = 500 / n
+    // //获取用户点击navbar时距离
     let currentDistance = window.scrollY
     //滚动目标距离
     let targetDisctance = top - 80
-    let S = targetDisctance - currentDistance
-    //delay时间内每次移动的距离
-    let s = S / n
-    let i = 0
-    let scrollId = setInterval(() => {
-      if(i === n) {
-        window.clearInterval(scrollId)
-        return
-      }
-      i += 1
-      window.scrollTo(0, currentDistance + s * i)
-    }, duration)
-    window.scrollTo(0, top - 80)
+    let s = targetDisctance - currentDistance
+    console.log(s);
+    
+    // //delay时间内每次移动的距离
+    // let s = S / n
+    // let i = 0
+    // let scrollId = setInterval(() => {
+    //   if(i === n) {
+    //     window.clearInterval(scrollId)
+    //     return
+    //   }
+    //   i += 1
+    //   window.scrollTo(0, currentDistance + s * i)
+    // }, duration)
+    // var t = (s / 100) * 300
+    // if(t>500) {t = 500}
+    var coords = {y: currentDistance}
+    var tween = new TWEEN.Tween(coords)
+    .to({y: targetDisctance}, 1000)
+    .easing(TWEEN.Easing.Quadratic.InOut)
+    .onUpdate(function() {
+      window.scrollTo(0, coords.y)
+    })
+    .start()
   })
 }
 
