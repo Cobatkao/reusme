@@ -31,8 +31,9 @@ for(let i = 0; i < aTages.length; i++) {
     let currentDistance = window.scrollY
     //滚动目标距离
     let targetDisctance = top - 80
+    let S = targetDisctance - currentDistance
     //delay时间内每次移动的距离
-    let finalScrollDsitance = (targetDisctance - currentDistance) / n
+    let s = S / n
     let i = 0
     let scrollId = setInterval(() => {
       if(i === n) {
@@ -40,7 +41,7 @@ for(let i = 0; i < aTages.length; i++) {
         return
       }
       i += 1
-      window.scrollTo(0, currentDistance + finalScrollDsitance * i)
+      window.scrollTo(0, currentDistance + s * i)
     }, duration)
     window.scrollTo(0, top - 80)
   })
