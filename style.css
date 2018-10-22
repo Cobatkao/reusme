@@ -96,7 +96,14 @@ hr {
   margin-right: 17px;
   position: relative;
 }
-.topNavBar  nav > ul > li.submenu > ul {
+[data-x].offset {
+  transform: translateY(100px);
+}
+[data-x] {
+  transform: translateY(0);
+  transition: all .5s;
+}
+.topNavBar  nav > ul > li > .submenu {
   display: none;
   position: absolute;
   top: 100%;
@@ -114,13 +121,13 @@ hr {
     margin-right: 0;
   }
 }
-.topNavBar  nav > ul > li.submenu > ul.active {
+.topNavBar  nav > ul > li.active > .submenu {
   display: block;
   white-space: nowrap;
   cursor: pointer;
   animation: submenuSlide .5s;
 }
-.topNavBar  nav > ul > li.submenu > ul.active > li {
+.topNavBar  nav > ul > li.active > .submenu > li {
   padding: 10px 15px 10px 10px;
   color: #3d4451;
   background: #fff;
@@ -137,7 +144,7 @@ hr {
   padding-top: 7px;
 }
 /*topNavBar动画*/
-@keyframes slideBar {
+@keyframes menuSlide {
   0% {
     width: 0;
   }
@@ -146,7 +153,8 @@ hr {
     width: 100%;
   }
 }
-.topNavBar  nav > ul > li > a:hover::after {
+.topNavBar  nav > ul > li.active > a::after,
+.topNavBar  nav > ul > li.highlight > a::after {
   content: '';
   display: block;
   position: absolute;
@@ -155,7 +163,7 @@ hr {
   width: 100%;
   background: #e06567;
   height: 3px;
-  animation: slideBar .5s;
+  animation: menuSlide .5s;
 }
 .banner {
   background-image: url(./img/cute_cover.jpg);
@@ -181,7 +189,7 @@ hr {
   background-color: rgba(0,0,0,.6);
 } */
 body > main {
-  margin-top: -20%;
+  margin-top: -30%;
   position: relative;
   z-index: 2;
 }
@@ -314,11 +322,11 @@ body > main > div.download > .download-button:hover {
 }
 section.skills {
   max-width: 940px;
-  margin: 65px auto 0px auto;
+  margin: 80px auto 0px auto;
 }
 section.skills > ol {
   background: #fff;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
+  box-shadow: 0px 1px 5px 0px rgba(41, 22, 22, 0.5);
   padding: 42px 50px;
   margin-top: 30px;
 }
@@ -335,15 +343,21 @@ section.skills > ol > li:nth-child(even) {
 }
 section.skills .progress-bar {
   height: 5px;
-  background: #cd676b;
+  background: #FAE1E1;
   border-radius: 2px;
-  margin: 5px 0;
+  margin-top: 15px;
+  overflow: hidden;
 }
 section.skills .progress-bar .progress {
   height: 100%;
   width: 75%;
-  background: #f5e1e1;
+  background: #E6686A;
   border-radius: 2px;
+  transform: translateX(0);
+  transition: all 1s;
+}
+section.skills.offset .progress {
+  transform: translateX(-100%);
 }
 section.portfolio {
   max-width: 940px;

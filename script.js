@@ -1,19 +1,52 @@
+//loading animate
+setTimeout(() => {
+  siteWelcome.classList.remove('show')
+}, 1000)
+
+//向下滚动动画
+let specialTags = document.querySelectorAll('[data-x]')
+  let minIndex = 0
+  for(let i = 0; i < specialTags.length; i++) {
+    specialTags[i].classList.add('offset')
+  }
+
+//监听滚动
+setTimeout(() => {
+  findCloseElement()
+}, 1000);
 document.addEventListener('scroll', (e) => {
   window.scrollY?topNavBar.classList.add('sticky'):topNavBar.classList.remove('sticky')
+  findCloseElement()
 })
 
-//下拉二级菜单
-let liTages = document.getElementsByClassName('submenu') // 拿到li
+function findCloseElement() {
+  let specialTags = document.querySelectorAll('[data-x]')
+  let minIndex = 0
+  for(let i = 1; i < specialTags.length; i++) {
+    if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+      minIndex = i
+    }
+  }
+
+  specialTags[minIndex].classList.remove('offset')
+  let id = specialTags[minIndex].id
+  let a = document.querySelector(`a[href="#${id}"]`)
+  let li = a.parentNode
+  let siblingNode = li.parentNode.children
+  for(let i = 0; i < siblingNode.length; i++) {
+    siblingNode[i].classList.remove('highlight')
+  }
+
+  li.classList.add('highlight')
+}
+
+let liTages = document.querySelectorAll('nav > ul > li')
 for(let i = 0; i < liTages.length; i++) {
   liTages[i].addEventListener('mouseenter', (e) => {
-    let li = e.currentTarget
-    let ul = li.getElementsByTagName('ul')[0]
-    ul.classList.add('active')
+    e.currentTarget.classList.add('active')
   })
   liTages[i].addEventListener('mouseleave', (e) => {
-    let li = e.currentTarget
-    let ul = li.getElementsByTagName('ul')[0]
-    ul.classList.remove('active')
+    e.currentTarget.classList.remove('active')
   })
 }
 
@@ -40,7 +73,6 @@ for(let i = 0; i < aTages.length; i++) {
     //滚动目标距离
     let targetDisctance = top - 80
     let s = targetDisctance - currentDistance
-    console.log(s);
     
     // //delay时间内每次移动的距离
     // let s = S / n
@@ -70,7 +102,3 @@ for(let i = 0; i < aTages.length; i++) {
 portfolioAll.onclick = ()=>{portfolioBar.className = 'bar state-1'}
 portfolioFramework.onclick = ()=>{portfolioBar.className = 'bar state-2'}
 portfolioVallina.onclick = ()=>{portfolioBar.className = 'bar state-3'}
-
-setTimeout(() => {
-  siteWelcome.classList.remove('show')
-}, 1000)
